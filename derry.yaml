@@ -1,0 +1,6 @@
+test: pub run test
+analyze: dartanalyzer --fatal-warnings --fatal-infos .
+publish:
+  - $test
+  - $analyze
+  - pub publish --dry-run

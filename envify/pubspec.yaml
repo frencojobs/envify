@@ -1,0 +1,13 @@
+name: envify
+description:
+version: 1.0.0
+homepage: https://github.com/frencojobs/envify
+
+environment:
+  sdk: ">=2.8.1 <3.0.0"
+
+dev_dependencies:
+  test: ^1.6.0
+  lint: ^1.3.0
+
+scripts: ../derry.yaml
