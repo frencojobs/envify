@@ -159,7 +159,7 @@ Envify solves all the presented issues by using code generation.
 
 ## Acknowledgement
 
-To make this project possible, I had to learn about source code generation which I didn't know anything about. I had to read source codes of large source code generator projects like [`json_serializable`](https://github.com/google/json_serializable.dart) and many others. So in certain parts like how the tests are written, and how the API is structured are influenced by those projects. The parse used in the generator comes from the [dotenv](https://pub.dev/packages/dotenv) package.
+To make this project possible, I had to learn about source code generation which I didn't know anything about. I had to read source codes of large source code generator projects like [`json_serializable`](https://github.com/google/json_serializable.dart) and many others. So certain parts like how the tests are written, and how the API is structured are influenced by those projects. The parse used in the generator comes from the [dotenv](https://pub.dev/packages/dotenv) package.
 
 Also, using a class as an abstraction layer instead of directly accessing the generated code is a design decision I made so that the error when the `env.g.dart` part file is not generated, won't spread out through the project. Now even when the part file is not generated yet, the error only stays in the `env.dart` file.
 
