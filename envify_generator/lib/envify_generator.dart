@@ -1,2 +1,1 @@
-export 'package:envify_generator/src/generators/envify_generator.dart'
-    show EnvifyGenerator;
+export 'package:envify_generator/src/generator.dart' show EnvifyGenerator;
