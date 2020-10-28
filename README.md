@@ -2,6 +2,30 @@
 
 A better and probably safer way to handle environment variables in Flutter.
 
+<br>
+
+<details>
+<summary>Table of Contents</summary>
+
+<br>
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+  - [Change `.env` file path](#change-env-file-path)
+  - [Change generated class name](#change-generated-class-name)
+- [Motivation](#motivation)
+- [Features](#features)
+- [Acknowledgement](#acknowledgement)
+- [License](#license)
+
+</details>
+
+<br>
+
 ## Overview
 
 For a `.env` file like this,
@@ -29,6 +53,8 @@ Now you can use the `Env.key`,
 print(Env.key); // "VALUE"
 ```
 
+<br>
+
 ## Installation
 
 Add both `envify` and `envify_generator` as dependencies,
@@ -43,6 +69,8 @@ dev_dependencies:
 ```
 
 If you already don't have `build_runner`, you need to add it too.
+
+<br>
 
 ## Usage
 
@@ -72,9 +100,11 @@ pub run build_runner build
 flutter pub run build_runner build
 ```
 
+<br>
+
 ## API Documentation
 
-**Change `.env` file path**
+#### **Change `.env` file path**
 
 You can change the file to get the data to generate for, in the `@Envify` annotation. By this API, it is also possible to have multiple environment variables classes for multiple occasions.
 
@@ -86,7 +116,7 @@ abstract class DevEnv {}
 abstract class ProdEnv {}
 ```
 
-**Change generated class name**
+#### **Change generated class name**
 
 By default, the generated class will be named as the name of the annotated class with a `_` prefixed. You can change it using the `name` field. The `_` will always be prefixed to make it so that it can't be imported anywhere except the current file.
 
@@ -96,6 +126,8 @@ abstract class Env {
    static const key = _Secrets.key;
 }
 ```
+
+<br>
 
 ## Motivation
 
@@ -113,6 +145,8 @@ But there were some problems with this approach that I noticed,
 
 Envify solves all the presented issues by using code generation.
 
+<br>
+
 ## Features
 
 - Envify will generate code for the _user defined set of keys_ with the values from the environment variables file which is `.env` by default. Since the generated code is part of the source, it will be passed through the obfuscating/compiling process during compile time making it harder to reverse engineer.
@@ -125,11 +159,15 @@ Envify solves all the presented issues by using code generation.
 
 - The generated fields will be constant expressions that can be used within source code generation and every other place user needed.
 
+<br>
+
 ## Acknowledgement
 
 To make this project possible, I had to learn about source code generation which I didn't know anything about. I had to read source codes of large source code generator projects like [`json_serializable`](https://github.com/google/json_serializable.dart) and many others. So in certain parts like how the tests are written, and how the API is structured are influenced by those projects. The parse used in the generator comes from the [dotenv](https://pub.dev/packages/dotenv) package.
 
 Also, using a class as an abstraction layer instead of directly accessing the generated code is a design decision I made so that the error when the `env.g.dart` part file is not generated, won't spread out through the project. Now even when the part file is not generated yet, the error only stays in the `env.dart` file.
+
+<br>
 
 ## License
 
