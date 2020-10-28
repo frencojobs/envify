@@ -2,12 +2,8 @@
 
 A better and probably safer way to handle environment variables in Flutter.
 
-<br>
-
 <details>
 <summary>Table of Contents</summary>
-
-<br>
 
 ## Table of Contents
 
