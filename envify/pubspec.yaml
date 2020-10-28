@@ -1,5 +1,5 @@
 name: envify
-description:
+description: A better way to handle environment variables using `.env` file.
 version: 1.0.0
 homepage: https://github.com/frencojobs/envify
 
