@@ -2,8 +2,7 @@
 
 A better and probably safer way to handle environment variables in Flutter.
 
-<details>
-<summary>Table of Contents</summary>
+<br>
 
 ## Table of Contents
 
@@ -17,8 +16,6 @@ A better and probably safer way to handle environment variables in Flutter.
 - [Features](#features)
 - [Acknowledgement](#acknowledgement)
 - [License](#license)
-
-</details>
 
 <br>
 
