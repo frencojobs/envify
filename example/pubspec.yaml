@@ -13,3 +13,5 @@ dev_dependencies:
   build_runner: ^1.10.0
   envify_generator:
     path: ../envify_generator
+
+scripts: ../derry.yaml # this is for development purposes only, not necessary
