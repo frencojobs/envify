@@ -1,6 +1,6 @@
 ## 1.0.1
 
-- Add symbolic linked `README.md` and `example` files
+- Update example and README.md to work properly
 
 ## 1.0.0
 
