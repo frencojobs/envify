@@ -1,5 +1,7 @@
 # Envify
 
+[![Envify](https://img.shields.io/pub/v/envify?label=envify)](https://pub.dev/packages/envify)&nbsp;&nbsp;&nbsp;[![Envify Generator](https://img.shields.io/pub/v/envify_generator?label=envify+generator)](https://pub.dev/packages/envify_generator)
+
 A **better** and probably **safer** way to handle environment variables in Flutter.
 
 > To read _why this is better/safer_ in details, skip to the [motivation](#motivation) section.
