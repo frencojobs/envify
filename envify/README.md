@@ -113,7 +113,7 @@ abstract class ProdEnv {}
 
 #### **Change generated class name**
 
-By default, the generated class will be named as the name of the annotated class with a `_` prefixed. You can change it using the `name` field. The `$` will always be prefixed to differ generated classes from manually written class names.
+By default, the generated class will be named as the name of the annotated class with a `$` prefixed. You can change it using the `name` field. The `$` will always be prefixed to differ generated classes from manually written class names.
 
 ```dart
 @Envify(name: 'Secrets')
