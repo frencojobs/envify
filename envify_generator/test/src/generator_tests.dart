@@ -48,7 +48,7 @@ abstract class Env7 {
 }
 
 @ShouldGenerate('''
-class \$Env8 {
+class _Env8 {
   static const String name = 'frenco';
   static const int age = 19;
   static const double height = 167.9;
@@ -66,7 +66,7 @@ abstract class Env8 {
 }
 
 @ShouldGenerate('''
-class \$Secrets {}
+class _Secrets {}
 ''')
 @Envify(name: 'Secrets', path: 'test/.env.example')
 abstract class Env9 {}

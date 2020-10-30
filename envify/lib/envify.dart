@@ -1,7 +1,7 @@
 /// An annotation used to specify the class to generate code for.
 class Envify {
   /// The value to use as name for the generated class, with
-  /// an underscore `$` prefixed.
+  /// an underscore `_` prefixed.
   ///
   /// If `null` or an empty [String], the name of the annotated class is used.
   ///
@@ -15,7 +15,7 @@ class Envify {
   /// will look like
   ///
   /// ```dart
-  /// abstract class $Secrets {}
+  /// abstract class _Secrets {}
   /// ```
   final String name;
 

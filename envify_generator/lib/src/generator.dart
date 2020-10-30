@@ -48,7 +48,7 @@ class EnvifyGenerator extends GeneratorForAnnotation<Envify> {
     );
 
     return '''
-    class \$${config.name} {
+    class _${config.name} {
       ${lines.toList().join()}
     }
     ''';
