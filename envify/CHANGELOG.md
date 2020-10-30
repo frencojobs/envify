@@ -1,3 +1,11 @@
+## 1.0.4
+
+- Update `README.md` for `$` prefix
+
+## 1.0.3
+
+- Use `$` as generated class's prefix instead of `_` to support usages from annotations
+
 ## 1.0.2
 
 - Normalize example folder
