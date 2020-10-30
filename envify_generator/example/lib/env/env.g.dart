@@ -6,7 +6,7 @@ part of 'env.dart';
 // EnvifyGenerator
 // **************************************************************************
 
-class $Env {
+class _Env {
   static const String name = 'frenco';
   static const int age = 19;
   static const double height = 167.9;

@@ -36,11 +36,11 @@ part 'env.g.dart';
 
 @Envify()
 abstract class Env {
-    static const key = $Env.key;
+    static const key = _Env.key;
 }
 ```
 
-envify will generate the part file which contains the `$Env` class with value for `KEY` loaded from the `.env` file.
+envify will generate the part file which contains the `_Env` class with value for `KEY` loaded from the `.env` file.
 
 Now you can use the `Env.key`,
 
@@ -82,7 +82,7 @@ part 'env.g.dart';
 
 @Envify()
 abstract class Env {
-    static const key = $Env.key;
+    static const key = _Env.key;
 }
 ```
 
@@ -113,12 +113,12 @@ abstract class ProdEnv {}
 
 #### **Change generated class name**
 
-By default, the generated class will be named as the name of the annotated class with a `$` prefixed. You can change it using the `name` field. The `$` will always be prefixed to differ generated classes from manually written class names.
+By default, the generated class will be named as the name of the annotated class with a `_` prefixed. You can change it using the `name` field. Note that the `_` will always be prefixed.
 
 ```dart
 @Envify(name: 'Secrets')
 abstract class Env {
-   static const key = $Secrets.key;
+   static const key = _Secrets.key;
 }
 ```
 
