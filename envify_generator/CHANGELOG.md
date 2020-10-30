@@ -1,3 +1,7 @@
+## 1.0.3
+
+- Generate class names prefixed with `$` now, to make it usable/accessible with annotations from other generators
+
 ## 1.0.2
 
 - Normalize example folder
