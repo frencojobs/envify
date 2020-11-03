@@ -111,6 +111,17 @@ abstract class DevEnv {}
 abstract class ProdEnv {}
 ```
 
+Or if you're using Flutter,
+
+```dart
+import 'package:flutter/foundation.dart';
+
+// ...
+
+@Envify(path: kReleaseMode ? '.env.production' : '.env.development')
+abstract class Env {}
+```
+
 #### **Change generated class name**
 
 By default, the generated class will be named as the name of the annotated class with a `_` prefixed. You can change it using the `name` field. Note that the `_` will always be prefixed.
