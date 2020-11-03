@@ -1,3 +1,7 @@
+## 1.0.6
+
+- Change the builder name from `envifyBuilder` to `envify`
+
 ## 1.0.5
 
 - Revert previous two version because they didn't solve the problem for annotations' usage

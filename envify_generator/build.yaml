@@ -1,11 +1,11 @@
 targets:
   $default:
     builders:
-      envify_generator|envifyBuilder:
+      envify_generator|envify:
         enabled: True
 
 builders:
-  envifyBuilder:
+  envify:
     import: "package:envify_generator/builder.dart"
     builder_factories: ["envifyBuilder"]
     build_extensions:
