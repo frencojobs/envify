@@ -1,3 +1,7 @@
+## 1.0.6
+
+- Add example for conditionally changing the `.env` file path in Flutter using `kReleaseMode`
+
 ## 1.0.5
 
 - Revert previous two version because they didn't solve the problem for annotations' usage
