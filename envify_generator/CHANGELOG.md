@@ -1,3 +1,8 @@
+## 1.1.0
+
+- Partially migrated to null-safety
+- Use null-safety migrated `envify` version
+
 ## 1.0.6
 
 - Change the builder name from `envifyBuilder` to `envify`
