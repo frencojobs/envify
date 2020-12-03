@@ -17,7 +17,7 @@ class Envify {
   /// ```dart
   /// abstract class _Secrets {}
   /// ```
-  final String name;
+  final String? name;
 
   /// The file path relative to the project base path, which
   /// will be used to get environment variables from.
@@ -25,5 +25,5 @@ class Envify {
   /// If `null` or an empty [String], `.env` is used.
   final String path;
 
-  const Envify({this.name, this.path});
+  const Envify({this.name, this.path = '.env'});
 }

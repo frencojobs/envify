@@ -1,3 +1,7 @@
+## 2.0.0
+
+- Migrate to null safety
+
 ## 1.0.6
 
 - Add example for conditionally changing the `.env` file path in Flutter using `kReleaseMode`
