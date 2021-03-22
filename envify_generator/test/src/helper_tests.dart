@@ -4,11 +4,11 @@ import 'package:test/test.dart';
 void main() {
   group('Are helpers working? Because', () {
     test('`validate` should return `true`', () {
-      expect(validate('', (x) => x.isEmpty), true);
+      expect(validate('', (x) => x!.isEmpty), true);
     });
 
     test('`validate` should return `false`', () {
-      expect(validate('-', (x) => x.isEmpty), false);
+      expect(validate('-', (x) => x!.isEmpty), false);
     });
 
     test('`ifFalsy` should return `b`', () {

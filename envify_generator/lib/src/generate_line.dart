@@ -8,7 +8,7 @@ import 'package:analyzer/dart/element/element.dart';
 /// Since this function also does the type casting,
 /// an [InvalidGenerationSourceError] will also be thrown if
 /// the type can't be casted, or is not supported.
-String generateLine(FieldElement field, String value) {
+String generateLine(FieldElement field, String? value) {
   if (value == null) {
     throw InvalidGenerationSourceError(
       'Environment variable not found for field `${field.name}`.',
@@ -30,7 +30,6 @@ String generateLine(FieldElement field, String value) {
         } else {
           return result;
         }
-        break;
       case "double":
         final result = double.tryParse(value);
         if (result == null) {
@@ -41,7 +40,6 @@ String generateLine(FieldElement field, String value) {
         } else {
           return result;
         }
-        break;
       case "num":
         final result = num.tryParse(value);
         if (result == null) {
@@ -52,7 +50,6 @@ String generateLine(FieldElement field, String value) {
         } else {
           return result;
         }
-        break;
       case "bool":
         final lowercaseValue = value.toLowerCase();
         if (['true', 'false'].contains(lowercaseValue)) {
@@ -63,17 +60,14 @@ String generateLine(FieldElement field, String value) {
             element: field,
           );
         }
-        break;
       case "String":
       case "dynamic":
         return "'$value'";
-        break;
       default:
         throw InvalidGenerationSourceError(
           'Envify can only handle types such as `int`, `double`, `num`, `bool` and `String`. Type `$t` is not one of them.',
           element: field,
         );
-        break;
     }
   })(type);
 
