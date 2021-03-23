@@ -12,7 +12,7 @@ abstract class Env1 {}
 @ShouldThrow('Environment variable not found for field `foo`.')
 @Envify(path: 'test/.env.example')
 abstract class Env2 {
-  static const foo = null;
+  static const dynamic foo = null;
 }
 
 @ShouldThrow(
@@ -20,31 +20,31 @@ abstract class Env2 {
 )
 @Envify(path: 'test/.env.example')
 abstract class Env3 {
-  static const Symbol name = null;
+  static const Symbol? name = null;
 }
 
 @ShouldThrow('Type `int` do not align up to value `frenco`.')
 @Envify(path: 'test/.env.example')
 abstract class Env4 {
-  static const int name = null;
+  static const int? name = null;
 }
 
 @ShouldThrow('Type `double` do not align up to value `frenco`.')
 @Envify(path: 'test/.env.example')
 abstract class Env5 {
-  static const double name = null;
+  static const double? name = null;
 }
 
 @ShouldThrow('Type `num` do not align up to value `frenco`.')
 @Envify(path: 'test/.env.example')
 abstract class Env6 {
-  static const num name = null;
+  static const num? name = null;
 }
 
 @ShouldThrow('Type `bool` do not align up to value `frenco`.')
 @Envify(path: 'test/.env.example')
 abstract class Env7 {
-  static const bool name = null;
+  static const bool? name = null;
 }
 
 @ShouldGenerate('''
@@ -58,11 +58,11 @@ class _Env8 {
 ''')
 @Envify(path: 'test/.env.example')
 abstract class Env8 {
-  static const String name = null;
-  static const int age = null;
-  static const double height = null;
-  static const bool isStudent = null;
-  static const race = null;
+  static const String? name = null;
+  static const int? age = null;
+  static const double? height = null;
+  static const bool? isStudent = null;
+  static const dynamic race = null;
 }
 
 @ShouldGenerate('''
