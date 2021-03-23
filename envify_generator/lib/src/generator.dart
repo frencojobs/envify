@@ -28,7 +28,7 @@ class EnvifyGenerator extends GeneratorForAnnotation<Envify> {
     final el = element;
     final config = Envify(
       name: ifFalsy(annotation.read('name').literalValue as String?, el.name),
-      path: ifFalsy(annotation.read('path').literalValue as String?, '.env')!,
+      path: ifFalsy(annotation.read('path').literalValue as String?, '.env'),
     );
 
     final envs = await loadEnvs(config.path, (error) {

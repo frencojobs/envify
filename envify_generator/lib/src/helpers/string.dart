@@ -14,8 +14,8 @@ bool validate(String? input, boolFn predicate) {
 /// Method that will returns
 /// [a] if [a] is not null or an empty string. Otherwise,
 /// [b] will be returned.
-String? ifFalsy(String? a, String b) {
-  return validate(a, (x) => (x ?? '').isNotEmpty) ? a : b;
+String ifFalsy(String? a, String b) {
+  return validate(a, (x) => (x ?? '').isNotEmpty) ? a! : b;
 }
 
 /// Method to convert camelCases to snake_cases
