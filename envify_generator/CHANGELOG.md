@@ -1,6 +1,10 @@
+## 2.0.0
+
+- Migrate to null-safety
+
 ## 1.1.0
 
-- Partially migrated to null-safety
+- Partially migrate to null-safety
 - Use null-safety migrated `envify` version
 
 ## 1.0.6
