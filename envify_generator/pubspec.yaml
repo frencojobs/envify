@@ -10,7 +10,7 @@ dependencies:
   analyzer: ^2.0.0
   build: ^2.0.1
   dotenv: ^3.0.0
-  envify: ^2.0.0
+  envify: ^2.0.1
   path: ^1.8.0
   source_gen: ^1.0.0
 
