@@ -1,5 +1,5 @@
-import 'package:source_gen/source_gen.dart';
 import 'package:analyzer/dart/element/element.dart';
+import 'package:source_gen/source_gen.dart';
 
 /// Generate the line to be used in the generated class.
 /// If [value] is `null`, it means the variable definition doesn't exist
