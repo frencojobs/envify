@@ -1,6 +1,6 @@
 name: envify_generator
 description: Code generator for envify, a better tool to handle environment variables.
-version: 2.0.1
+version: 2.0.2
 homepage: https://github.com/frencojobs/envify
 
 environment:
@@ -10,7 +10,7 @@ dependencies:
   analyzer: ^2.0.0
   build: ^2.0.1
   dotenv: ^3.0.0
-  envify: ^2.0.1
+  envify: ^2.0.2
   path: ^1.8.0
   source_gen: ^1.0.0
 
