@@ -1,3 +1,7 @@
+## 2.0.2
+
+- Fix linter errors
+
 ## 2.0.1
 
 - Upgrade SDK and dependencies

@@ -1,3 +1,7 @@
+## 2.0.2
+
+- Remove `kReleaseMode` example from documentation
+
 ## 2.0.1
 
 - Upgrade SDK and dependencies
