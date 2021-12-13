@@ -12,7 +12,7 @@ abstract class Env1 {}
 @ShouldThrow('Environment variable not found for field `foo`.')
 @Envify(path: 'test/.env.example')
 abstract class Env2 {
-  static const dynamic foo = null;
+  static const String foo = 'bar';
 }
 
 @ShouldThrow(
@@ -55,18 +55,38 @@ class _Env8 {
   static const bool isStudent = true;
   static const race = 'Asian';
 }
-''')
+''',)
 @Envify(path: 'test/.env.example')
 abstract class Env8 {
   static const String? name = null;
   static const int? age = null;
   static const double? height = null;
   static const bool? isStudent = null;
-  static const dynamic race = null;
+  static const race = null;
+}
+
+@ShouldGenerate('''
+class _Env9 {
+  static const hairColor = null;
+}
+''',)
+@Envify(path: 'test/.env.example')
+abstract class Env9 {
+  static const hairColor = null;
+}
+
+@ShouldGenerate('''
+class _Env10 {
+  static const String? hairColor = null;
+}
+''',)
+@Envify(path: 'test/.env.example')
+abstract class Env10 {
+  static const String? hairColor = null;
 }
 
 @ShouldGenerate('''
 class _Secrets {}
-''')
+''',)
 @Envify(name: 'Secrets', path: 'test/.env.example')
-abstract class Env9 {}
+abstract class Env11 {}
