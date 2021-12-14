@@ -7,5 +7,7 @@ void main() {
     height: ${Env.height}cm
     isStudent: ${Env.isStudent}
     race: ${Env.race}
+    hairColor = ${Env.hairColor};
+    eyeColor = ${Env.eyeColor};
   ''');
 }

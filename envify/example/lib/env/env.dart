@@ -9,4 +9,6 @@ abstract class Env {
   static const double height = _Env.height;
   static const bool isStudent = _Env.isStudent;
   static const race = _Env.race;
+  static const String? hairColor = _Env.hairColor;
+  static const eyeColor = _Env.eyeColor;
 }
