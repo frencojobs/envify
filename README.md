@@ -122,6 +122,22 @@ abstract class Env {
 }
 ```
 
+#### **Optional/Null values**
+
+By default, if the type of a key is not nullable (suffixed with `?`) or dynamic, envify will throw an error.
+
+However you can declare a key to be nullable and envify will provide a value if it's present in `.env` file, otherwise the value will be `null`. This is useful for CI/CD workflows where you might not want to create a .env file or for enviorment variables that depend on external factors like local developer configs
+
+> remember dynamic is nullable by default so use dynamic carefully
+
+```dart
+@Envify()
+abstract class Env {
+   static const String? nullable_value = _Env.nullable_value; // null
+   static const dynamic_value = _Env.dynamic_value; // null
+}
+```
+
 <br>
 
 ## Motivation
@@ -150,9 +166,11 @@ Envify solves all the presented issues by using code generation.
 
 - Changing between multiple environment files like `.env.production` and `.env.development` is also easier because the user can configure which file to load environment variables from via the `@Envify` annotation.
 
-- Users can also pass optional field types during the definition, which envify will use to cast the values of generated fields. But since it's not appropriate to store large values except strings in the `.env` file, only literal types like `int`, `double`, `num`, `bool`, and `String` can be parsed. If type is optional or else, `String` will be used as default.
+- Users can also pass optional field types during the definition, which envify will use to cast the values of generated fields. But since it's not appropriate to store large values except strings in the `.env` file, only literal types like `int`, `double`, `num`, `bool`, and `String` can be parsed. If type is not mentioned (implicitly `dynamic`) or is `dynamic`, it will be parsed as a `String`.
 
-- The generated fields will be constant expressions that can be used within source code generation and every other place user needed.
+- Users can also define nullable field types during the definition. If envify cannot find a value  in `.env` then it's value will be `null`.
+
+- The generated fields will be constant expressions that can be used within source code generation and every other place user needs.
 
 <br>
 
