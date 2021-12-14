@@ -77,12 +77,10 @@ String generateLine(FieldElement field, String? value) {
     })();
   }
 
-  if (typeString != 'dynamic') {
-    if (parsedValue == null) {
-      typeString += '?';
-    }
-  } else {
+  if (field.type.isDynamic) {
     typeString = '';
+  } else if (parsedValue == null) {
+    typeString += '?';
   }
 
   return 'static const $typeString ${field.name} = $parsedValue;';
