@@ -5,7 +5,12 @@ import 'package:source_gen_test/annotations.dart';
 @Envify()
 const foo = 'bar';
 
-@ShouldThrow("Environment variables file doesn't exist at `.env`.")
+@ShouldGenerate(
+  '''
+class _Env1 {}
+''',
+expectedLogItems: ["Environment variables file doesn't exist at `.env`."],
+)
 @Envify()
 abstract class Env1 {}
 

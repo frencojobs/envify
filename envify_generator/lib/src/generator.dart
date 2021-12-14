@@ -31,12 +31,7 @@ class EnvifyGenerator extends GeneratorForAnnotation<Envify> {
       path: ifFalsy(annotation.read('path').literalValue as String?, '.env'),
     );
 
-    final envs = await loadEnvs(config.path, (error) {
-      throw InvalidGenerationSourceError(
-        error,
-        element: el,
-      );
-    });
+    final envs = await loadEnvs(config.path);
 
     final lines = el.fields.map(
       (field) => generateLine(
