@@ -1,9 +1,10 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/nullability_suffix.dart';
+import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
 /// Generate the line to be used in the generated class.
-/// If [value] is `null`, it means the variable definition doesn't exist
+/// If [value] is `null` but the type is not nullable or `dynamic`, it means the variable definition doesn't exist
 /// and an [InvalidGenerationSourceError] will be thrown.
 ///
 /// Since this function also does the type casting,
@@ -77,11 +78,7 @@ String generateLine(FieldElement field, String? value) {
     })();
   }
 
-  if (field.type.isDynamic) {
-    typeString = '';
-  } else if (parsedValue == null) {
-    typeString += '?';
-  }
+  typeString = field.type.getDisplayString(withNullability: true);
 
   return 'static const $typeString ${field.name} = $parsedValue;';
 }

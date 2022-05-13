@@ -54,11 +54,11 @@ abstract class Env7 {
 
 @ShouldGenerate('''
 class _Env8 {
-  static const String name = 'frenco';
-  static const int age = 19;
-  static const double height = 167.9;
-  static const bool isStudent = true;
-  static const race = 'Asian';
+  static const String? name = 'frenco';
+  static const int? age = 19;
+  static const double? height = 167.9;
+  static const bool? isStudent = true;
+  static const dynamic race = 'Asian';
 }
 ''',)
 @Envify(path: 'test/.env.example')
@@ -72,7 +72,7 @@ abstract class Env8 {
 
 @ShouldGenerate('''
 class _Env9 {
-  static const hairColor = null;
+  static const dynamic hairColor = null;
 }
 ''',)
 @Envify(path: 'test/.env.example')

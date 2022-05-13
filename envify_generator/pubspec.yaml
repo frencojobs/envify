@@ -7,10 +7,13 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  analyzer: ^3.3.1
+  analyzer: ">=3.0.0 <5.0.0"
   build: ^2.0.1
-  dotenv: ^3.0.0
-  envify: ^2.0.2
+  dotenv: ^4.0.1
+  envify:
+    git:
+      url: https://github.com/DebkanchanSamadder/envify.git
+      path: envify
   path: ^1.8.0
   source_gen: ^1.0.0
 
@@ -20,3 +23,7 @@ dev_dependencies:
   test: ^1.16.8
 
 scripts: ../derry.yaml
+
+dependency_overrides:
+  envify:
+    path: ../envify
