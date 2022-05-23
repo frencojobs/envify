@@ -3,6 +3,8 @@ description: A better way to handle environment variables using `.env` file.
 version: 2.0.2
 homepage: https://github.com/frencojobs/envify
 
+publish_to: "none"
+
 environment:
   sdk: ">=2.17.1 <3.0.0"
 
