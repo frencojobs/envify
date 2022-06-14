@@ -25,5 +25,12 @@ class Envify {
   /// If `null` or an empty [String], `.env` is used.
   final String path;
 
-  const Envify({this.name, this.path = '.env'});
+  /// Allows all the values to be encrypted using a random
+  /// generated key that is then XOR'd with the encrypted
+  /// value when being accessed the first time.
+  /// Please note that the values can not be offered with
+  /// the const qualifier, but only with final.
+  final bool obfuscate;
+
+  const Envify({this.name, this.path = '.env', this.obfuscate = false});
 }

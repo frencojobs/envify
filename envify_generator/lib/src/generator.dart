@@ -3,6 +3,7 @@ import 'package:build/build.dart';
 import 'package:envify/envify.dart';
 import 'package:envify_generator/helpers.dart';
 import 'package:envify_generator/src/generate_line.dart';
+import 'package:envify_generator/src/generate_line_encrypted.dart';
 import 'package:envify_generator/src/load_envs.dart';
 import 'package:source_gen/source_gen.dart';
 
@@ -28,21 +29,17 @@ class EnvifyGenerator extends GeneratorForAnnotation<Envify> {
     final config = Envify(
       name: ifFalsy(annotation.read('name').literalValue as String?, el.name),
       path: ifFalsy(annotation.read('path').literalValue as String?, '.env'),
+      obfuscate: annotation.read('obfuscate').boolValue,
     );
 
     final envs = await loadEnvs(config.path, (error) {
-      throw InvalidGenerationSourceError(
-        error,
-        element: el,
-      );
+      throw InvalidGenerationSourceError(error, element: el);
     });
 
     final lines = el.fields.map(
-      (field) => generateLine(
+      (field) => (config.obfuscate ? generateLineEncrypted : generateLine)(
         field,
-        envs.containsKey(normalize(field.name))
-            ? envs[normalize(field.name)]
-            : null,
+        envs[normalize(field.name)],
       ),
     );
 
