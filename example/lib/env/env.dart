@@ -4,9 +4,8 @@ part 'env.g.dart';
 
 @Envify()
 abstract class Env {
-  static const String name = _Env.name;
-  static const int age = _Env.age;
-  static const double height = _Env.height;
-  static const bool isStudent = _Env.isStudent;
-  static const race = _Env.race;
+  static const String dbHost = _Env.dbHost;
+  static const int dbPort = _Env.dbPort;
+  static const double timeout = _Env.timeout;
+  static const bool development = _Env.development;
 }

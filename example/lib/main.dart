@@ -2,10 +2,9 @@ import 'package:example/env/env.dart';
 
 void main() {
   print('''
-    name: ${Env.name}
-    age: ${Env.age}
-    height: ${Env.height}cm
-    isStudent: ${Env.isStudent}
-    race: ${Env.race}
+    dbHost: ${Env.dbHost}
+    dbPort: ${Env.dbPort}
+    timeout: ${Env.timeout}
+    development: ${Env.development}
   ''');
 }
