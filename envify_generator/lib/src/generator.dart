@@ -1,11 +1,10 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:envify/envify.dart';
+import 'package:envify_generator/helpers.dart';
+import 'package:envify_generator/src/generate_line.dart';
+import 'package:envify_generator/src/load_envs.dart';
 import 'package:source_gen/source_gen.dart';
-
-import '../helpers.dart';
-import 'generate_line.dart';
-import 'load_envs.dart';
 
 /// Generate code for classes annotated with the `@Envify()`.
 ///

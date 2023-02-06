@@ -1,7 +1,6 @@
-test: pub run test
-gen: pub run build_runner build --delete-conflicting-outputs
-analyze: dartanalyzer --fatal-warnings --fatal-infos .
+test: dart test
+analyze: dart analyze --fatal-warnings --fatal-infos .
 publish:
   - $test
   - $analyze
-  - pub publish --dry-run
+  - dart pub publish --dry-run

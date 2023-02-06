@@ -7,9 +7,8 @@ part of 'env.dart';
 // **************************************************************************
 
 class _Env {
-  static const String name = 'frenco';
-  static const int age = 19;
-  static const double height = 167.9;
-  static const bool isStudent = true;
-  static const race = 'Asian';
+  static const String dbHost = 'localhost';
+  static const int dbPort = 27017;
+  static const double timeout = 9.5;
+  static const bool development = true;
 }
