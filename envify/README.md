@@ -1,3 +1,8 @@
+## Envify has been deprecated in favor of [Envied](https://pub.dev/packages/envied)
+
+> Envied works pretty much the same way as Envify, just with more features while being actively maintained. I strongly recommend you migrate to it because Envify will no longer receive further updates. If you're here for the first time, just go straight ahead to [Envied](https://github.com/petercinibulk/envied).
+> ⏤ Frenco
+
 # Envify
 
 A **better** and probably **safer** way to handle environment variables in Flutter.
@@ -17,7 +22,6 @@ A **better** and probably **safer** way to handle environment variables in Flutt
 - [Motivation](#motivation)
 - [Features](#features)
 - [Acknowledgement](#acknowledgement)
-- [License](#license)
 
 <br>
 
@@ -161,9 +165,3 @@ Envify solves all the presented issues by using code generation.
 To make this project possible, I had to learn about code generation which I did not know anything about. To learn, I had to read source codes of large code generator projects like [`json_serializable`](https://github.com/google/json_serializable.dart) and many others. So certain parts like how the tests are written, and how the API is structured are influenced by those projects. The parser used in the generator comes from the [dotenv](https://pub.dev/packages/dotenv) package.
 
 Also, using a class as an abstraction layer instead of directly accessing the generated code is a design decision I made so that the error when the `env.g.dart` part file is not generated, won't spread out through the project. Now even when the part file is not generated yet, the error only stays in the `env.dart` file.
-
-<br>
-
-## License
-
-MIT © Frenco Jobs

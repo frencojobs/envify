@@ -20,49 +20,47 @@ abstract class Env2 {
 )
 @Envify(path: 'test/.env.example')
 abstract class Env3 {
-  static const Symbol? name = null;
+  static const Symbol? dbHost = null;
 }
 
-@ShouldThrow('Type `int` do not align up to value `frenco`.')
+@ShouldThrow('Type `int` do not align up to value `localhost`.')
 @Envify(path: 'test/.env.example')
 abstract class Env4 {
-  static const int? name = null;
+  static const int? dbHost = null;
 }
 
-@ShouldThrow('Type `double` do not align up to value `frenco`.')
+@ShouldThrow('Type `double` do not align up to value `localhost`.')
 @Envify(path: 'test/.env.example')
 abstract class Env5 {
-  static const double? name = null;
+  static const double? dbHost = null;
 }
 
-@ShouldThrow('Type `num` do not align up to value `frenco`.')
+@ShouldThrow('Type `num` do not align up to value `localhost`.')
 @Envify(path: 'test/.env.example')
 abstract class Env6 {
-  static const num? name = null;
+  static const num? dbHost = null;
 }
 
-@ShouldThrow('Type `bool` do not align up to value `frenco`.')
+@ShouldThrow('Type `bool` do not align up to value `localhost`.')
 @Envify(path: 'test/.env.example')
 abstract class Env7 {
-  static const bool? name = null;
+  static const bool? dbHost = null;
 }
 
 @ShouldGenerate('''
 class _Env8 {
-  static const String name = 'frenco';
-  static const int age = 19;
-  static const double height = 167.9;
-  static const bool isStudent = true;
-  static const race = 'Asian';
+  static const String dbHost = 'localhost';
+  static const int dbPort = 27017;
+  static const double timeout = 9.5;
+  static const bool development = true;
 }
 ''')
 @Envify(path: 'test/.env.example')
 abstract class Env8 {
-  static const String? name = null;
-  static const int? age = null;
-  static const double? height = null;
-  static const bool? isStudent = null;
-  static const dynamic race = null;
+  static const String? dbHost = null;
+  static const int? dbPort = null;
+  static const double? timeout = null;
+  static const bool? development = null;
 }
 
 @ShouldGenerate('''
